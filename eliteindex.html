@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Elite Scents</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="glow"></div>
+
+    <header>
+        <div class="logo">
+            Elite Scents
+            <span class="hover-text">Luxury fragrances that define your identity</span>
+        </div>
+
+        <div class="cart-btn" onclick="toggleCart()">Cart</div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Elite Scents</h1>
+            <p>Luxury fragrances that define your identity.</p>
+        </div>
+    </section>
+
+    <section class="products">
+
+        <div class="card">
+            <h3>Cardamom Essence</h3>
+            <p>Warm spicy luxury blend</p>
+            <button onclick="addToCart(0)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <h3>Oud Resin Blend</h3>
+            <p>Deep woody signature scent</p>
+            <button onclick="addToCart(1)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <h3>Rose Garden</h3>
+            <p>Soft floral elegant fragrance</p>
+            <button onclick="addToCart(2)">Add to Cart</button>
+        </div>
+
+    </section>
+
+    <!-- CART (FIXED STRUCTURE) -->
+    <div class="cart" id="cart">
+        <h2>Your Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <div class="total" id="totalPrice"></div>
+        <button onclick="checkoutWhatsApp()">
+            Checkout
+        </button>
+
+        <button onclick="toggleCart()">Close</button>
+    </div>
+
+    <a class="whatsapp" href="https://wa.me/201234567890" target="_blank"></a>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+<a class="whatsapp-float" href="https://wa.me/201017850410" target="_blank">
+    <svg viewBox="0 0 32 32">
+        <path
+            d="M19.11 17.44c-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.19.28-.73.91-.89 1.1-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.37-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.1-.23-.55-.47-.47-.64-.48h-.54c-.19 0-.49.07-.74.35-.25.28-.96.94-.96 2.3s.99 2.68 1.13 2.87c.14.19 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z" />
+        <path
+            d="M16 3C9.37 3 4 8.37 4 15c0 2.64.86 5.07 2.32 7.05L5 29l7.21-1.9C14.02 27.68 15 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3z" />
+    </svg>
+</a>
