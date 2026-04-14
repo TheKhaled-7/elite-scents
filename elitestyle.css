@@ -1,0 +1,351 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #0f0f0f 0%, #070707 60%);
+    color: #fff;
+    overflow-x: hidden;
+    animation: pageIn 1s ease;
+}
+
+/* ===== BACKGROUND LUXURY GLOW ===== */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.22;
+    z-index: -1;
+    animation: floatGlow 12s ease-in-out infinite;
+}
+
+body::before {
+    background: #C8A96A;
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    background: #ffffff;
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 3s;
+}
+
+@keyframes floatGlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    z-index: 1000;
+}
+
+.logo {
+    color: #C8A96A;
+    position: relative;
+    font-weight: 600;
+}
+
+.hover-text {
+    position: absolute;
+    top: 25px;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.logo:hover .hover-text {
+    opacity: 1;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 80px;
+    color: #C8A96A;
+    animation: heroTitle 1.5s ease;
+}
+
+.hero p {
+    opacity: 0.7;
+    animation: fadeUp 2s ease;
+}
+
+/* ===== PRODUCTS ===== */
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 120px 20px;
+}
+
+/* ===== CARD (CLEAN LUXURY) ===== */
+.card {
+    width: 260px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: cardIn 0.9s ease forwards;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    border: 1px solid rgba(200, 169, 106, 0.5);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #C8A96A;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* ===== CART ===== */
+.cart {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: auto;
+    z-index: 2000;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.total {
+    margin-top: 20px;
+    color: #C8A96A;
+    font-size: 18px;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.15);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp img {
+    width: 28px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes heroTitle {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #C8A96A, #a88b55);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(200, 169, 106, 0.3);
+}
+
+.checkout-btn:active {
+    transform: scale(0.96);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.12);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(37, 211, 102, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: floatW 3s ease-in-out infinite;
+}
+
+.whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+    fill: #25D366;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: rgba(37, 211, 102, 0.2);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2);
+}
+
+@keyframes floatW {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
